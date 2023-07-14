@@ -11,6 +11,7 @@
 - [ ] Botar rank com o nome do usuário
 - [ ] Definir outros modos de jogo
 - [ ] Definir musica tema
+- [ ] Definir um bot para fazer uma corrida
   
 ## Caracteristicas do Game
 
