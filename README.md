@@ -7,10 +7,15 @@
   - [ ] Inserir uma trilha sonora de fundo de preferência `bury the light`
     - [ ] Verirficar se tem como mudar a frequencia da música
 - [ ] Modo principal ou um mario
+- [ ] Definir usuário
+- [ ] Botar rank com o nome do usuário
+- [ ] Definir outros modos de jogo
+- [ ] Definir musica tema
   
 ## Caracteristicas do Game
 
 - Velocidade do jogo é definiido pelo fps, quanto mais fps, mais rápido fica o mapa e os elementos
+- As caracteristicas do game mudam com base no tempo do game, não existe fim predefinido
 
 ## Dúvidas Surgidas
 
