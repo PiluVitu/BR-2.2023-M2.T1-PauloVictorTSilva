@@ -25,3 +25,16 @@
 - Como adiciona novos elementos no cenário?
 - É possivel gerar com base em numeros ? Sons ?
 - Geração é predefinida ou criada do zero ?
+
+## Aula 2
+
+- Valores em caixa alta, são considerado constantes
+- Perguntas sobre a base que já aprendemos
+  - Como diferenciar funções e classes dos demais
+  - Quando a gente usa uma clase com var capitilize
+- GameSpeed = atributo que vamos atrelar a velocidade da nossa lógica
+- FPS = alterar a quantidade de frames renderizados por segundo
+
+### Question
+
+- Qual ponto da spride é usado como referencia de posicionamento
