@@ -6,13 +6,13 @@
 - [ ] Pensar em novas funcionalidades
   - [ ] Inserir uma trilha sonora de fundo de preferência `bury the light`
     - [ ] Verirficar se tem como mudar a frequencia da música
-- [ ] Modo principal ou um mario
-- [ ] Definir usuário
-- [ ] Botar rank com o nome do usuário
-- [ ] Definir outros modos de jogo
-- [ ] Definir musica tema
-- [ ] Definir um bot para fazer uma corrida
-- [ ] Alterar pulo quando aperta ou segura o botão
+  - [ ] Modo principal ou um mario
+  - [ ] Definir usuário
+  - [ ] Botar rank com o nome do usuário
+  - [ ] Definir outros modos de jogo
+  - [ ] Definir musica tema
+  - [ ] Definir um bot para fazer uma corrida
+  - [ ] Alterar pulo quando aperta ou segura o botão
   
 ## Caracteristicas do Game
 
