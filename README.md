@@ -12,6 +12,7 @@
 - [ ] Definir outros modos de jogo
 - [ ] Definir musica tema
 - [ ] Definir um bot para fazer uma corrida
+- [ ] Alterar pulo quando aperta ou segura o botão
   
 ## Caracteristicas do Game
 
