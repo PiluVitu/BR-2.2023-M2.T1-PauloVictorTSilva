@@ -1,4 +1,6 @@
 import pygame
+from pygame.sprite import Sprite
+
 from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING
 
 X_POS = 80
@@ -7,7 +9,7 @@ JUMP_VEL = 8.5
 DINO_HEIGHT_DIFF = RUNNING[0].get_height() - DUCKING[0].get_height()
 
 
-class Dinosaur:
+class Dinosaur(Sprite):
     def __init__(self):
         self.image = RUNNING[0]
         self.dino_rect = self.image.get_rect()
@@ -37,7 +39,6 @@ class Dinosaur:
             self.dino_duck = True
         elif not self.dino_jump and not self.dino_duck:
             self.dino_jump = False
-            self.dino_duck = False
             self.dino_run = True
 
         if self.step_index >= 10:
