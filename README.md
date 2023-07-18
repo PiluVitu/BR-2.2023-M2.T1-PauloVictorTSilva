@@ -13,6 +13,14 @@
   - [ ] Definir musica tema
   - [ ] Definir um bot para fazer uma corrida
   - [ ] Alterar pulo quando aperta ou segura o botão
+  - [ ] PowerUp dino voar
+
+## Convenções
+
+- Separar em uma linha em branco os imports
+- Separar por duas linhas em branco antes de começar uma classe
+- Uma linha em branco entre médodos de uma classe(Funções)
+- Separar por uma linha em branco bancos de lógica
   
 ## Caracteristicas do Game
 
