@@ -1,21 +1,30 @@
 import pygame
 
+from random import randint
+
 from dino_runner.components.osbstacles.cactus import Cactus
-from dino_runner.utils.constants import SMALL_CACTUS
+from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS
 
 
 class ObstacleManeger:
+    # TODO [x] Adicionar o Large Cactus
+    # TODO Feat Adicionar o Papagaio pré histórico
     def __init__(self):
         self.obstacles = []
+        self.alternate_append_index = 0
 
     def update(self, game):
         if len(self.obstacles) == 0:
-            self.obstacles.append(Cactus(SMALL_CACTUS))
+            self.alternate_append_index = randint(1, 2)
+            if self.alternate_append_index % 2 == 0:
+                self.obstacles.append(Cactus(SMALL_CACTUS))
+            else:
+                self.obstacles.append(Cactus(LARGE_CACTUS))
 
         for obstacle in self.obstacles:
             obstacle.update(game.game_speed, self.obstacles)
             if game.player.dino_rect.colliderect(obstacle.rect):
-                pygame.time.delay(500)
+                pygame.time.delay(1500)
                 game.playing = False
                 break
 
