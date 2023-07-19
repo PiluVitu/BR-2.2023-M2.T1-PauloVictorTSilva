@@ -2,7 +2,6 @@
 
 ## Metas
 
-- [ ] Completar o código junto com a professora
 - [ ] Pensar em novas funcionalidades
   - [ ] Inserir uma trilha sonora de fundo de preferência `bury the light`
     - [ ] Verirficar se tem como mudar a frequencia da música
@@ -18,6 +17,9 @@
   - [ ] Modo hardcore, vidas limitadas
   - [ ] Conectar com a api do spotify
   - [ ] Definir Easy, Medium, Hard
+  - [ ] Quando chegar em determinada parte fica em modo escuro
+  - [ ] Fazer parecido com o mendu do battle robots com gif do game de fundo
+  - [x] Font Personalizada
 
 ## Convenções
 
