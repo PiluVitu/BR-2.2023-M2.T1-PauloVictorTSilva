@@ -15,6 +15,9 @@
   - [ ] Alterar pulo quando aperta ou segura o botão
   - [ ] PowerUp dino voar
   - [ ] Quando o Dino morrer, ele dá uma pirueta e cai no limbo, tipo uma animação de morte
+  - [ ] Modo hardcore, vidas limitadas
+  - [ ] Conectar com a api do spotify
+  - [ ] Definir Easy, Medium, Hard
 
 ## Convenções
 
