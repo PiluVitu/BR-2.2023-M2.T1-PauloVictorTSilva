@@ -8,8 +8,7 @@ from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD
 
 
 class ObstacleManeger:
-    # TODO [x] Adicionar o Large Cactus
-    # TODO Feat Adicionar o Papagaio pré histórico
+    # [ ] Corrigir a lógica para ficar orientada a objeto corretamente
     def __init__(self):
         self.obstacles = []
         self.alternate_append_index = 0
@@ -27,7 +26,7 @@ class ObstacleManeger:
         for obstacle in self.obstacles:
             obstacle.update(game.game_speed, self.obstacles)
             if game.player.dino_rect.colliderect(obstacle.rect):
-                pygame.time.delay(1500)
+                pygame.time.delay(500)
                 game.playing = False
                 game.death_count += 1
                 break

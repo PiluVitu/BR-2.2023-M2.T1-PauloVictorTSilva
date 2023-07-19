@@ -12,7 +12,8 @@ from dino_runner.utils.constants import (
 from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.osbstacles.obstacle_maneger import ObstacleManeger
 
-FONT_STYLE = "freesansbold.ttf"
+FONT_STYLE = "dino_runner/assets/Other/JetBrainsMono-Bold.ttf"
+COLORS = {"background": (255, 255, 255), "text": (0, 0, 0)}
 
 
 class Game:
@@ -26,11 +27,23 @@ class Game:
         self.running = False
         self.game_speed = 20
         self.score = 0
+        self.current_score = 0
         self.death_count = 0
         self.x_pos_bg = 0
         self.y_pos_bg = 380
         self.player = Dinosaur()
         self.obstacle_manager = ObstacleManeger()
+
+    def print_on_screen(self, font_size, data, color, position):
+        font = pygame.font.Font(FONT_STYLE, font_size)
+        text = font.render(data, True, color)
+        text_rect = text.get_rect()
+        text_rect.center = position
+        self.screen.blit(text, text_rect)
+
+    def reset_game_score_and_game_speed(self):
+        self.score = 0
+        self.game_speed = 20
 
     def execute(self):
         self.running = True
@@ -63,12 +76,13 @@ class Game:
 
     def update_score(self):
         self.score += 1
+        self.current_score = self.score
         if self.score % 100 == 0:
             self.game_speed += 5
 
     def draw(self):
         self.clock.tick(FPS)
-        self.screen.fill((255, 255, 255))
+        self.screen.fill(COLORS["background"])
         self.draw_background()
         self.player.draw(self.screen)
         self.obstacle_manager.draw(self.screen)
@@ -86,32 +100,66 @@ class Game:
         self.x_pos_bg -= self.game_speed
 
     def draw_score(self):
-        font = pygame.font.Font(FONT_STYLE, 22)
-        text = font.render(f"Score: {self.score}", True, (0, 0, 0))
-        text_rect = text.get_rect()
-        text_rect.center = (1000, 50)
-        self.screen.blit(text, text_rect)
+        self.print_on_screen(22, f"Score: {self.score}", COLORS["text"], (1000, 50))
 
     def show_menu(self):
-        self.screen.fill((255, 255, 255))
+        self.screen.fill(COLORS["background"])
         half_screen_height = SCREEN_HEIGHT // 2
         half_screen_width = SCREEN_WIDTH // 2
 
         if self.death_count == 0:
-            font = pygame.font.Font(FONT_STYLE, 22)
-            text = font.render("Press any key to start", True, (0, 0, 0))
-            text_rect = text.get_rect()
-            text_rect.center = (half_screen_width, half_screen_height)
-            self.screen.blit(text, text_rect)
-        else:  ## tela de restart
-            self.screen.blit(ICON, (half_screen_width - 20, half_screen_height - 140))
+            self.print_on_screen(
+                22,
+                "Press any key to start",
+                COLORS["text"],
+                (half_screen_width, half_screen_height),
+            )
+        else:
+            self.screen.blit(
+                ICON,
+                (half_screen_width - ICON.get_width() / 2, half_screen_height - 140),
+            )
 
-            ## mostrar mensagem de "Press any key to restart"
-            ## mostrar o score atingido
-            ## mostrar death_count
-
-            ### Resetar score e game_speed quando uma nova partida for iniciada
-            ### Criar método para remover a repetição de código para o texto
+            if self.death_count > 1:
+                self.print_on_screen(
+                    22,
+                    f"You went from vasco {self.death_count} time",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height)),
+                )
+                self.print_on_screen(
+                    22,
+                    f"Your score is: {self.current_score}",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 30)),
+                )
+                self.print_on_screen(
+                    22,
+                    "Press any key to restart",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 60)),
+                )
+                self.reset_game_score_and_game_speed()
+            else:
+                self.print_on_screen(
+                    22,
+                    "You went from vasco",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height)),
+                )
+                self.print_on_screen(
+                    22,
+                    f"Your score is: {self.current_score}",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 30)),
+                )
+                self.print_on_screen(
+                    22,
+                    "Press any key to restart",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 60)),
+                )
+                self.reset_game_score_and_game_speed()
 
         pygame.display.update()
         self.handle_event_on_menu()
