@@ -120,7 +120,47 @@ class Game:
                 (half_screen_width - ICON.get_width() / 2, half_screen_height - 140),
             )
 
-            if self.death_count > 1:
+            if self.death_count == 1:
+                self.print_on_screen(
+                    22,
+                    "You went from vasco once",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height)),
+                )
+                self.print_on_screen(
+                    22,
+                    f"Your score is: {self.current_score}",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 30)),
+                )
+                self.print_on_screen(
+                    22,
+                    "Press any key to restart",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 60)),
+                )
+                self.reset_game_score_and_game_speed()
+            elif self.death_count == 2:
+                self.print_on_screen(
+                    22,
+                    "You went from vasco twice",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height)),
+                )
+                self.print_on_screen(
+                    22,
+                    f"Your score is: {self.current_score}",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 30)),
+                )
+                self.print_on_screen(
+                    22,
+                    "Press any key to restart",
+                    COLORS["text"],
+                    ((half_screen_width, half_screen_height + 60)),
+                )
+                self.reset_game_score_and_game_speed()
+            elif self.death_count > 2:
                 self.print_on_screen(
                     22,
                     f"You went from vasco {self.death_count} time",
