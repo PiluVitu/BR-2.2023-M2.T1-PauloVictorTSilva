@@ -14,6 +14,7 @@
   - [ ] Definir um bot para fazer uma corrida
   - [ ] Alterar pulo quando aperta ou segura o botão
   - [ ] PowerUp dino voar
+  - [ ] Quando o Dino morrer, ele dá uma pirueta e cai no limbo, tipo uma animação de morte
 
 ## Convenções
 
