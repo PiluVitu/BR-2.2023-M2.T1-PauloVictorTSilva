@@ -31,7 +31,9 @@ class ObstacleManager:
                     game.playing = False
                     game.death_count += 1
                     break
-                else:
+                elif game.player.type == "shield":
+                    pass
+                elif game.player.type == "hammer":
                     self.obstacles.remove(obstacle)
 
     def draw(self, screen):
