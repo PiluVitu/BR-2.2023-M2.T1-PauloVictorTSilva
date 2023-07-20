@@ -61,6 +61,7 @@ class Game:
         self.playing = True
         self.obstacle_manager.reset_obstacle()
         self.power_up_manager.reset_power_ups()
+        pygame.mixer.music.play(-1)
         while self.playing:
             self.events()
             self.update()
@@ -163,6 +164,7 @@ class Game:
                     ((half_screen_width, half_screen_height + 60)),
                 )
                 self.reset_game_score_and_game_speed()
+                pygame.mixer.music.stop()
             elif self.death_count == 2:
                 self.print_on_screen(
                     22,
@@ -183,6 +185,7 @@ class Game:
                     ((half_screen_width, half_screen_height + 60)),
                 )
                 self.reset_game_score_and_game_speed()
+                pygame.mixer.music.stop()
             elif self.death_count > 2:
                 self.print_on_screen(
                     22,
@@ -203,6 +206,7 @@ class Game:
                     ((half_screen_width, half_screen_height + 60)),
                 )
                 self.reset_game_score_and_game_speed()
+                pygame.mixer.music.stop()
             else:
                 self.print_on_screen(
                     22,
@@ -223,6 +227,7 @@ class Game:
                     ((half_screen_width, half_screen_height + 60)),
                 )
                 self.reset_game_score_and_game_speed()
+                pygame.mixer.music.stop()
 
         pygame.display.update()
         self.handle_event_on_menu()
