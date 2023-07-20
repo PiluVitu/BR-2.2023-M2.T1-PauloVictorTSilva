@@ -7,7 +7,7 @@ from dino_runner.components.osbstacles.bird import Bird
 from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD
 
 
-class ObstacleManeger:
+class ObstacleManager:
     # [ ] Corrigir a lógica para ficar orientada a objeto corretamente
     def __init__(self):
         self.obstacles = []
@@ -26,10 +26,13 @@ class ObstacleManeger:
         for obstacle in self.obstacles:
             obstacle.update(game.game_speed, self.obstacles)
             if game.player.dino_rect.colliderect(obstacle.rect):
-                pygame.time.delay(500)
-                game.playing = False
-                game.death_count += 1
-                break
+                if not game.player.has_power_up:
+                    pygame.time.delay(1000)
+                    game.playing = False
+                    game.death_count += 1
+                    break
+                else:
+                    self.obstacles.remove(obstacle)
 
     def draw(self, screen):
         for obstacles in self.obstacles:
