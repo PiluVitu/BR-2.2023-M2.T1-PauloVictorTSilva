@@ -36,7 +36,7 @@ class ObstacleManager:
                 elif game.player.type == "hammer":
                     self.obstacles.remove(obstacle)
                 elif game.player.type == "heart":
-                    pygame.time.delay(1000)
+                    pygame.time.delay(500)
                     self.obstacles.remove(obstacle)
                     game.player.has_power_up = False
 
